@@ -1,0 +1,167 @@
+:root{
+    --thin: 100;
+    --extralight: 200;
+    --light: 300;
+    --regular: 400;
+    --medium: 500;
+    --semibold: 600;
+    --bold: 700;
+    --extrabold: 800;
+    --black: 900;
+}
+
+
+/************ Définition du poids des font *************/
+
+.thin{
+    font-style: normal;
+
+    font-weight: 100;
+}
+.extra-light{
+    font-style: normal;
+    font-weight: 200;
+}
+.light{
+    font-style: normal;
+    font-weight: 300;
+}
+.regular{
+    font-style: normal;
+    font-weight: 400;
+}
+.medium{
+    font-style: normal;
+    font-weight: 500;
+}
+.semibold{
+    font-style: normal;
+    font-weight: 600;
+}
+.bold{
+    font-style: normal;
+    font-weight: 700;
+}
+.extrabold{
+    font-style: normal;
+    font-weight: 800;
+}
+.black{
+    font-style: normal;
+    font-weight: 900;
+}
+
+/***********************************************/
+
+/************ Définition des familles de police *************/
+
+.display{
+    font-family: 'Fraunces';
+}
+
+.hl{
+    font-family: 'Fraunces';
+}
+
+.sd{
+    font-family: 'Poppins';
+}
+.bt{
+    font-family: 'Poppins';
+}
+
+/***********************************************/
+
+/************ Définition des tailles *************/
+
+
+/* Display */
+
+.display.un{
+    font-size: clamp(45px, 12vw, 176px);
+    line-height: 210px;
+    letter-spacing: 1px;
+}
+
+.display.deux{
+    font-size: clamp(45px, 10vw, 144px);
+    line-height: 170px;
+    letter-spacing: 1px;
+}
+
+.display.trois{
+    font-size: 120px;
+    line-height: 134px;
+    letter-spacing: 1px;
+}
+
+.display.quatre{
+    font-size: 96px;
+    line-height: 110px;    
+    letter-spacing: 0.5px;
+}
+
+/* Headline */
+.hl.un{
+    font-size: clamp(35px,calc(6500vw/ 1440),115px);
+}
+
+.hl.deux{
+    font-size: clamp(30px,calc(5500vw/ 1440),110px);}
+
+.hl.trois{
+    font-size: clamp(25px,calc(4500vw/ 1440),105px);}
+
+.hl.quatre{
+    font-size: clamp(21px,calc(3500vw/ 1440),100px);}
+
+.hl.cinq{
+    font-size: clamp(18px,calc(2500vw/ 1440),95px);}
+
+.hl.six{
+    font-size: clamp(15px,calc(2000vw/ 1440),90px);
+}
+
+/* Short Description */
+
+.sd.un{
+    font-size: clamp(22px,calc(2600vw/ 1440),60px);
+}
+
+.sd.deux{
+    font-size: clamp(20px,calc(2200vw/ 1440),55px);
+}
+
+.sd.trois{
+    font-size: clamp(18px,calc(1800vw/ 1440),50px);
+}
+
+.sd.quatre{
+    font-size: clamp(16px,calc(1650vw/ 1440),45px);
+}
+
+/* Body Text */
+
+.bt.un{
+    font-size: clamp(20px,calc(2100vw/ 1440),55px);
+}
+
+.bt.deux{
+    font-size: clamp(18px,calc(1900vw/ 1440),50px); 
+}
+
+.bt.trois{
+    font-size: clamp(16px,calc(1800vw/ 1440),45px);
+}
+
+.bt.quatre{
+    font-size: clamp(14px,calc(1700vw/ 1440),40px);
+}
+
+.bt.cinq{
+    font-size: clamp(13px,calc(1600vw/ 1440),35px);
+}
+
+.bt.six{
+    font-size: clamp(10px,calc(1500vw/ 1440),30px);
+}

@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Grand Guéret{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href={{asset('css/menu.css')}}>        
+{% endblock %}
+
+{% block body %}
+
+{{ include('partial/_nav.html.twig') }}
+
+<div class="container">
+<div>
+    <a href={{path('app_sondage')}} class="lien-selectors lien-sondage">
+        <div class="selector selectors selector-sondage bg-blue-light">
+            <div class="illustration border-beige-dark thin"></div>
+            <div class="bloc-textes">
+                <div class="titres">
+                    <h1 class="sd trois semibold">Sondage</h1>
+                    <p class="bt cinq light">
+                        Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <a href={{path('app_resultat')}} class="lien-selectors lien-resultat">
+        <div class="selector selectors selector-resultat bg-pink-light">
+            <div class="illustration border-beige-dark thin"></div>
+            <div class="bloc-textes">
+                <div class="titres">
+                    <h1 class="sd trois semibold">Résultat</h1>
+                    <p class="bt cinq light">
+                        Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis.
+                    </p>
+                </div>
+            </div>
+        </div>      
+    </a>
+    
+
+
+    <a href={{path('app_menu')}} class=" lien-contact">
+        <div class="selectors selector-contact bg-green-light">
+            <div class="illustration border-beige-dark thin"></div>
+            <div class="bloc-textes">
+                <div class="titres">
+                    <h1 class="sd trois semibold">Contact</h1>
+                    <p class="bt cinq light">
+                        Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+</div>
+{% endblock %}

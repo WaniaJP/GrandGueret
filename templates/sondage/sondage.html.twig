@@ -1,0 +1,134 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Grand Guéret{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href={{asset('css/sondage.css')}}>
+{% endblock %}
+
+{% block javascripts %}
+<script src={{asset('js/sondage.js')}} defer></script>
+{% endblock %}
+
+{% block body %}
+{% for message in app.flashes('error') %}
+    <div class="flash-error sd quatre semibold border-pink-medium bg-pink-light solid thick pink dark">
+        {{ message }}
+    </div>
+{% endfor %}
+
+<div class="retour-small">
+    <a href="{{path('app_accueil')}}" class="lien bt quatre semibold">
+    <button class="border-beige-dark beige dark small-light-button bt quatre semibold">
+        Retour
+    </button>
+    </a>
+</div>
+<div class="bloc-form thin border-beige-dark bg-beige-light">
+    
+
+    <div class="aliments-choisi">
+        <h1 class="sd un medium beige dark">Aliments</h1>
+        {{ form_start(form) }}
+
+        
+            {{ form_row(form.Aliment1) }}
+        {{ form_row(form.Aliment2) }}
+        {{ form_row(form.Aliment3) }}
+        {{ form_row(form.Aliment4) }}
+        {{ form_row(form.Aliment5) }}
+        
+        
+        {{ form_row(form.Aliment6) }}
+            {{ form_row(form.Aliment7) }}
+            {{ form_row(form.Aliment8) }}
+            {{ form_row(form.Aliment9) }}
+            {{ form_row(form.Aliment10) }}
+        
+    </div>
+    <div class="validation">
+        <div>
+            {{ form_label(form.agreeTerms) }}
+            {{ form_widget(form.agreeTerms) }}   
+        </div>
+        
+        {{ form_row(form.Validation) }}
+        {{ form_end(form) }}
+    </div>
+
+    <div class="blocage"></div>
+
+
+</div>
+
+<div class="bloc-selection">
+    <div class="selection-aliment">
+        <div>
+            <div>
+                <h1 class="hl deux semibold beige dark">Choisissez un aliment</h1>
+
+                <div id="bloc-input">
+                    <input list="aliments-filtrer" id="selection-aliments"
+                        class="bt quatre regular beige dark border-beige-dark solid slim" name="aliment"
+                        placeholder="Tapez le nom d'un aliment ou selectionnez le dans la liste...">
+                    <datalist id="aliments-filtrer">
+                    </datalist>
+                </div>
+            </div>
+            <button id="next-aliment" class="small-dark-button bt quatre semibold bg-beige-dark white border-white">Passer au
+                suivant</button>
+
+                <div class="retour">
+                    <a href="{{path('app_menu')}}" class="lien bt quatre semibold">
+                    <button class="border-beige-dark beige dark small-light-button bt quatre semibold">
+                        Retour
+                    </button>
+                    </a>
+                </div>
+        </div>
+    </div>
+</div>
+
+<div class="bloc-filtre border-beige-dark thin bg-beige-light">
+    <div class="selection-Groupe">
+        <nav class="selection-onglet bg-beige-dark">
+            <div class="onglet onglet-groupe active">
+                <p class="bt six semibold">Groupe</p>
+            </div>
+            <div class="onglet onglet-sgroupe">
+                <p class="bt six semibold">Sous-Groupe</p>
+            </div>
+            <div class="onglet onglet-ssgroupe">
+                <p class="bt six semibold">Sous-Sous-Groupe</p>
+            </div>
+        </nav>
+    </div>
+    <div id="modal" class="filtres">
+        <div class="modal-recherche">
+            <input type="text" id="input-recherche" class="bt quatre regular beige dark border-beige-dark solid thin"
+                placeholder="Précisez votre recherche..." title="Type in a name">
+        </div>
+
+        <div>
+            <div class="filtre bloc-filtre-groupe">
+                <div class="groupe">
+                    <ul id="liste-groupe">
+                    </ul>
+                </div>
+            </div>
+            <div class="filtre bloc-filtre-sgroupe">
+                <div class="sgroupe">
+                    <ul id="liste-sgroupe">
+                    </ul>
+                </div>
+            </div>
+            <div class="filtre bloc-filtre-ssgroupe">
+                <div class="ssgroupe">
+                    <ul id="liste-ssgroupe">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

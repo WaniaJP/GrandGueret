@@ -1,0 +1,39 @@
+body{
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+    color: none;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+.small-dark-button{
+    border: 3px solid ;
+    box-shadow: 4px 4px 0px ;
+    background-color: var(--white);
+    padding: 1em 1vw;
+    transition: box-shadow 15ms ease-in-out;
+}
+
+.small-light-button{
+    border: 3px solid ;
+    box-shadow: 4px 4px 0px ;
+    padding: 1em 1vw;
+    background-color: var(--white);
+    transition: box-shadow 15ms ease-in-out;
+}
+
+.small-dark-button:hover, .small-light-button:hover{
+    box-shadow: 3px 3px 0px ;
+    opacity: 0.8;
+}
+
+.small-dark-button:active, .small-light-button:active{
+    box-shadow: 1px 1px 0px ;
+    border-width: 4px;
+}

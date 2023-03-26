@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion - Grand Guéret{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href={{asset('css/connexion.css')}}>          
+{% endblock %}
+
+{% block body %}
+<header>
+    <nav>
+        <a href={{path('app_accueil')}} class="lien">
+            <button class="small-light-button bt quatre semibold border-yellow-dark yellow dark">
+                Retour
+            </button>
+        </a>
+    </nav>
+</header>
+
+<div class="container">
+    <form method="post" class=" bg-white border-beige-dark thin solid">
+        {% if error %}
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+            
+        <div class="titles">
+            <h1 class="hl trois extrabold beige dark">Connexion</h1>
+            <h2 class="bt cinq regular beige dark">Vous n’avez pas encore de compte ? <br><span><a href={{path('app_register')}} class="beige dark">Inscrivez-vous dès aujourd’hui !</a></span></h2>
+        </div>
+
+        <div class="bloc-inputs">
+            <div class="bloc-email">
+                <label for="inputEmail" class="bt trois semibold beige dark">Email</label>
+                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control bt trois regular beige dark border-beige-dark solid slim" autocomplete="email" placeholder="Entrez votre email" required autofocus>
+            </div>
+    
+            <div class="bloc-mdp">
+                <label for="inputPassword" class="bt trois semibold beige dark">Mot de passe</label>
+                <input type="password" name="password" id="inputPassword" class="form-control bt trois regular beige dark border-beige-dark solid slim" autocomplete="current-password" placeholder="Entrez votre mot de passe" required>
+                <a href="" class="lien bt cinq regular beige dark">Mot de passe oublié ?</a>
+            </div>
+        </div>
+                
+    
+        <input type="hidden" name="_csrf_token"
+               value="{{ csrf_token('authenticate') }}"
+        >
+    
+        <button class="small-dark-button bt quatre semibold border-pink-dark pink dark" type="submit">
+            Se connecter
+        </button>
+    </form>
+</div>
+
+<footer class="bg-beige-dark border-beige-light">
+    <nav>
+        <div class="copyright">
+            <a href="" class="bt six semibold beige light">Copyright © 2023 Grand Guéret</a>
+        </div>
+
+        <div class="liens-footer">
+            <a href="" class="lien bt six semibold beige light border-beige-light">All Rights Reserved</a>
+            <a href="" class="lien bt six regular beige light border-beige-light">Privacy Policy</a>
+            <a href="" class="lien bt six regular beige light border-beige-light">Terms and Conditions</a>
+        </div>
+    </nav>
+</footer>
+{% endblock %}

@@ -1,0 +1,348 @@
+.flash-error{
+    cursor: pointer;
+  }
+  
+  @media screen and (max-width: 799px) {
+    .flash-error{
+      position: absolute;
+      z-index: 2;
+       left: 50%; /* à 50%/50% du parent référent */
+       top: 50%;
+      transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+    
+      padding: 1em 1.5em;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-image: url('/images/animations/connect.svg');
+      background-color: #fffdfa;
+  
+      gap: 2em;
+  
+    }
+  
+    .aliments-choisi{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .bloc-selection, .bloc-filtre{
+      display: none;
+    }
+  
+    .bloc-form{
+      width: 60vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  
+      gap: 2em;
+  
+      padding: 1vw 2vw;
+    }
+  
+    .bloc-form form{
+      display: flex;
+      flex-direction: column;
+      gap: 1.5em;
+    }
+  
+    .bloc-form form div{
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .aliment-input{
+      width: 100%;
+    }
+  
+    .retour-small{
+      width: 100%;
+    }
+  
+    .retour-small button{
+      margin-left: 2em;
+      margin-top: 2em;
+    }
+  }
+  
+  .validation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+  }
+  
+  .validation > div{
+    display: flex;
+    align-items: center;
+    gap: 1.25vw;
+  }
+  
+  @media screen and (min-width: 799.01px) {
+  
+    .flash-error{
+      position: absolute;
+      z-index: 2;
+       left: 50%; /* à 50%/50% du parent référent */
+       top: 10%;
+      transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+    
+      padding: 1em 1.5em;
+    }
+  
+     .aliments-choisi label{
+      display: none;
+    }
+    body {
+      display: grid;
+      grid-template-columns: 0.7fr 1.5fr 0.8fr;
+      grid-template-rows: 1fr;
+      gap: 0em 0em;
+      grid-auto-flow: row;
+      grid-template-areas: "Filtrage Container Enregistrement";
+  
+      height: 100vh;
+  
+      background-image: url('/images/animations/connect.svg');
+      background-color: var(--white);
+      background-size: cover;
+    }
+  
+    .bloc-form {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 2.5fr 0.5fr;
+      gap: 0px 0px;
+      grid-template-areas:
+        "Form"
+        "Validation";
+  
+      grid-area: Enregistrement;
+  
+      border-left: solid;
+      height: 100vh;
+  
+      overflow-y: scroll;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+    }
+  
+    .aliments-choisi {
+      grid-area: Form;
+      width: 100%;
+  
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  
+      
+    }
+  
+    .aliments-choisi form > div {
+      width: 100%;
+    }
+  
+    .aliment-input {
+      width: 100%;
+      padding: 0.5em 1em;
+    }
+    .first-alim {
+      border-top: solid;
+    }
+    .validation {
+      grid-area: Validation;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      padding: 1vw;
+    }
+  
+    .blocage {
+      grid-area: Form;
+    }
+  
+    .bloc-selection {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.8fr 2.2fr;
+      gap: 0px 0px;
+      grid-auto-flow: row;
+      grid-template-areas:
+        "selection-filtre"
+        "selection-aliment";
+      grid-area: Container;
+    }
+  
+    .selection-filtre {
+      grid-area: selection-filtre;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .selection-filtre > div {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .selection-filtre .buttons {
+      display: flex;
+      gap: 1em;
+    }
+  
+    .selection-aliment {
+      grid-area: selection-aliment;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      margin-top: -8em;
+    }
+  
+    .selection-aliment > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      gap: 1.75em;
+    }
+  
+    .selection-aliment > div > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      gap: 1em;
+    }
+  
+    #selection-aliments {
+      width: 25em;
+      padding: 0.5em 1em;
+    }
+  
+    .bloc-filtre {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.15fr 1.85fr;
+      gap: 0px 0px;
+      grid-template-areas:
+        "Selection-Groupe"
+        "filtres";
+      grid-area: Filtrage;
+      border-right: solid;
+  
+      overflow: auto; /* Enable scroll if needed */
+    }
+  
+    .selection-Groupe {
+      grid-area: Selection-Groupe;
+    }
+    .selection-Groupe nav {
+      grid-area: Selection-Groupe;
+      display: flex;
+      height: 100%;
+      width: 100%;
+      justify-content: space-between;
+    }
+  
+    .onglet {
+      padding: 0 0.6em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      background-color: var(--beige-dark);
+      color: var(--white);
+    }
+  
+    .filtres {
+      grid-area: filtres;
+      overflow-y: hidden;
+    }
+  
+    .filtres > div:nth-child(2) {
+      grid-area: filtres;
+      overflow-y: scroll;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      height: 100vh;
+  
+      padding: 1em 0;
+    }
+  
+    #input-recherche {
+      width: 100%;
+      padding: 0.5em 1em;
+      border-left: hidden;
+      border-right: hidden;
+    }
+  
+    li {
+      list-style: none;
+    }
+  
+    ul {
+      padding: 0;
+    }
+  
+    .bloc-check {
+      padding: 0.4em 0.8em;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+  
+      border-bottom: solid;
+    }
+  
+    .aliment-input{
+      border: hidden;
+      background-color: var(--white);
+    }
+    .aliment-input.active {
+      border-bottom: 2px solid;
+      border-top: 2px solid
+    }
+  
+    .onglet.active {
+      background-color: var(--white);
+      color: var(--beige-dark);
+    }
+  
+    .retour-small{
+      display: none;
+    }
+  
+    
+  }
+  
+  /* width */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }

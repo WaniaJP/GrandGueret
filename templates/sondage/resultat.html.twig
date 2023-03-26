@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Grand Guéret{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href={{asset('css/resultat.css')}}>
+{% endblock %}
+
+{% block javascripts %}
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src={{asset('js/resultat.js')}} defer></script>
+{% endblock %}
+
+{% block body %}
+
+{{ include('partial/_nav.html.twig') }}
+
+<div class="container">
+    <div class="bloc-graph bloc-calorique border-beige-dark solid thin">
+        <div id="bloc-alim-calorique" class="representation"></div>
+        <div class="description sd quatre medium">
+            <h1 class="sd un semi-bold">Taux de gras des aliments les plus choisis</h1>
+            <p class="sd quatre medium">
+                Ce graphique permet de montrer le taux de gras des 10 aliments les plus choisis par nos sondés. Il a pour but de lancer une réflexion sur l'impact qu'à le gras sur le choix de l'aliment.
+            </p>
+        </div>
+    </div>
+
+    <div class="bloc-graph bloc-alim bloc-calorique border-beige-dark solid thin">
+        <div id="bloc-alim-sucre" class="representation"></div>
+        <div class="description sd quatre medium">
+            <h1 class="sd un semi-bold">Fréquence d'apparition d'un aliment selon son taux de sucre</h1>
+            <p class="sd quatre medium">
+                Ce graphique permet de montrer la fréquence d'apparition d'un aliment selon sont taux de sucre. Il a pour but d'essayer de montrer une corrélation entre taux de sucre et choix de l'aliment.
+            </p>
+        </div>
+    </div>
+
+    <div class="bloc-graph bloc-sonde bloc-calorique border-beige-dark solid thin">
+        <div id="bloc-ville" class="representation"></div>
+        <div class="description">
+            <h1 class="sd un semi-bold">Part des sondés par ville</h1>
+            <p class="sd quatre medium">            
+                Ce graphique permet de montrer le pourcentage de personnes sondés par ville dans l'agglomération du Grand Guéret.
+            </p>
+        </div>
+    </div>
+    
+</div>
+    
+{% endblock %}

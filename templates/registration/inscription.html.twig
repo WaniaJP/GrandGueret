@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription - Grand Guéret{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href={{asset('css/inscription.css')}}>          
+{% endblock %}
+
+{% block body %}
+<header>
+    <nav>
+        <a href={{path('app_accueil')}} class="lien">
+            <button class="small-light-button bt quatre semibold border-yellow-dark yellow dark ">
+                Retour
+            </button>
+        </a>
+    </nav>
+</header>
+
+<div class="container border-beige-dark thin solid">
+    <div class="titles">
+        <h1 class="hl trois extrabold beige dark">Inscription</h1>
+        <h2 class="bt cinq regular beige dark">Vous avez déjà un compte ? <span><a href={{path('app_login')}} class="beige dark">Connectez-vous maintenant !</a></span></h2>
+    </div>
+    {{ form_start(registrationForm) }}
+        <div class="bloc-infos">
+            <div class="bloc-info">
+                <div class="input">
+                    {{ form_label(registrationForm.email) }}
+                    {{ form_widget(registrationForm.email) }}
+                </div>
+                <div class="input">
+                    {{ form_label(registrationForm.plainPassword) }}
+                    {{ form_widget(registrationForm.plainPassword) }}
+                </div>
+
+                <div class="input hide">
+                    {{ form_label(registrationForm.prenom) }}
+                    {{ form_widget(registrationForm.prenom) }}
+                </div>
+
+                <div class="input hide">
+                    {{ form_label(registrationForm.nom) }}
+                    {{ form_widget(registrationForm.nom) }}
+                </div>
+            </div>
+            
+            
+            <div class="bloc-info-detaille hide">
+                <div class="input">
+                    {{ form_label(registrationForm.dateNaissance) }}
+                    {{ form_widget(registrationForm.dateNaissance) }}
+                </div>
+
+                <div class="input">
+                    {{ form_label(registrationForm.adresse) }}
+                    {{ form_widget(registrationForm.adresse) }}
+                </div>
+
+                <div class="input">
+                    {{ form_label(registrationForm.codePostal) }}
+                    {{ form_widget(registrationForm.codePostal) }}
+                </div>
+
+                <div class="input">
+                    {{ form_label(registrationForm.ville) }}
+                    {{ form_widget(registrationForm.ville) }}
+                </div>
+
+            </div>
+        </div>
+
+        <div class="bloc-validation hide">
+            <div>
+                {{ form_widget(registrationForm.agreeTerms, {'attr': {'class': 'checkbox'}}) }}
+                {{ form_label(registrationForm.agreeTerms) }}
+            </div>
+            <button type="submit" class="btn small-dark-button bt quatre semibold border-pink-dark pink dark">Inscription</button>
+        </div>
+    {{ form_end(registrationForm) }}
+</div>
+{% endblock %}

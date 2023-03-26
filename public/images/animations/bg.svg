@@ -1,0 +1,399 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  version="1.1"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:svgjs="http://svgjs.com/svgjs"
+  width="1440"
+  height="1440"
+  preserveAspectRatio="none"
+  viewBox="0 0 1440 1440"
+>
+<g mask='url("#SvgjsMask10242")' fill="none">
+    <rect
+      width="523.32"
+      height="523.32"
+      clip-path='url("#SvgjsClipPath10243")'
+      x="212.63"
+      y="732.63"
+      fill="url(#SvgjsPattern10244)"
+      transform="rotate(254.73, 474.29, 994.29)"
+      class="triangle-float1"
+    ></rect>
+    <circle
+      r="118.58333333333333"
+      cx="1406.3"
+      cy="1223.12"
+      fill="rgba(222, 99, 128, 0.82)"
+      class="triangle-float1"
+    ></circle>
+    <path
+      d="M1206.77 207.88a5.6 5.6 0 1 0 4.98-10.03 5.6 5.6 0 1 0-4.98 10.03zM1213.88 193.55a5.6 5.6 0 1 0 4.98-10.03 5.6 5.6 0 1 0-4.98 10.03zM1220.99 179.22a5.6 5.6 0 1 0 4.98-10.04 5.6 5.6 0 1 0-4.98 10.04zM1228.11 164.88a5.6 5.6 0 1 0 4.97-10.03 5.6 5.6 0 1 0-4.97 10.03z"
+      fill="rgba(255, 203, 101, 0.82)"
+    class="triangle-float1"></path>
+    <rect
+      width="703.08"
+      height="703.08"
+      clip-path='url("#SvgjsClipPath10245")'
+      x="1039.58"
+      y="-300.68"
+      fill="url(#SvgjsPattern10246)"
+      transform="rotate(264.94, 1391.12, 50.86)"
+      class="triangle-float1"
+    ></rect>
+    <rect
+      width="264"
+      height="264"
+      clip-path='url("#SvgjsClipPath10247")'
+      x="222.06"
+      y="991.3"
+      fill="url(#SvgjsPattern10248)"
+      transform="rotate(241.24, 354.06, 1123.3)"
+      class="triangle-float1"
+    ></rect>
+  </g>
+  <defs>
+    <mask id="SvgjsMask10242">
+      <rect width="1440" height="1423" fill="#ffffff" class="triangle-float1"></rect>
+    </mask>
+    <pattern
+      x="0"
+      y="0"
+      width="12.46"
+      height="12.46"
+      patternUnits="userSpaceOnUse"
+      id="SvgjsPattern10244"
+    >
+      <path
+        d="M0 12.46L6.23 0L12.46 12.46"
+        stroke="rgba(222, 99, 128, 0.82)"
+        fill="none"
+      class="triangle-float1"></path>
+    </pattern>
+    <clipPath id="SvgjsClipPath10243">
+      <circle r="130.83" cx="474.29" cy="994.29" class="triangle-float1"></circle>
+    </clipPath>
+    <pattern
+      x="0"
+      y="0"
+      width="703.08"
+      height="11.34"
+      patternUnits="userSpaceOnUse"
+      id="SvgjsPattern10246"
+    >
+      <rect
+        width="703.08"
+        height="5.67"
+        x="0"
+        y="0"
+        fill="rgba(222, 99, 128, 0.82)"
+      class="triangle-float1"></rect>
+      <rect
+        width="703.08"
+        height="5.67"
+        x="0"
+        y="5.67"
+        fill="rgba(0, 0, 0, 0)"
+      class="triangle-float1"></rect>
+    </pattern>
+    <clipPath id="SvgjsClipPath10245">
+      <circle r="175.77" cx="1391.12" cy="50.86" class="triangle-float1"></circle>
+    </clipPath>
+    <pattern
+      x="0"
+      y="0"
+      width="6"
+      height="6"
+      patternUnits="userSpaceOnUse"
+      id="SvgjsPattern10248"
+    >
+      <path
+        d="M0 6L3 0L6 6"
+        stroke="rgba(255, 203, 101, 0.82)"
+        fill="none"
+      class="triangle-float1"></path>
+    </pattern>
+    <clipPath id="SvgjsClipPath10247">
+      <circle r="66" cx="354.06" cy="1123.3" class="triangle-float1"></circle>
+    </clipPath>
+  </defs>
+
+   <g mask='url("#SvgjsMask10557")' fill="none">
+    <path
+      d="M262.46 487.56 L453.55 692.9000000000001L251.58910200504192 696.6458979949581z"
+      fill="rgba(255, 203, 101, 0.82)"
+    class="triangle-float1"></path>
+    <rect
+      width="492.48"
+      height="492.48"
+      clip-path='url("#SvgjsClipPath10558")'
+      x="716.44"
+      y="-1.28"
+      fill="url(#SvgjsPattern10559)"
+      transform="rotate(235.1, 962.68, 244.96)"
+    class="triangle-float1"></rect>
+    <circle
+      r="160.09262702029943"
+      cx="1077.15"
+      cy="668.19"
+      stroke="rgba(129, 148, 212, 0.76)"
+      stroke-width="1.17"
+    class="triangle-float1"></circle>
+    <path
+      d="M874.47 944.39L885.27 951.27 880.93 963.32 891.73 970.2 887.39 982.25 898.19 989.13 893.85 1001.17M866.89 946.98L877.7 953.86 873.36 965.9 884.16 972.78 879.82 984.83 890.62 991.71 886.28 1003.76M859.32 949.56L870.13 956.44 865.79 968.49 876.59 975.37 872.25 987.42 883.05 994.3 878.71 1006.34"
+      stroke="rgba(255, 203, 101, 0.82)"
+      stroke-width="1"
+    class="triangle-float1"></path>
+    <circle
+      r="127.45280898780767"
+      cx="1067.07"
+      cy="797.16"
+      fill="rgba(129, 148, 212, 0.76)"
+    class="triangle-float1"></circle>
+  </g>
+  <defs>
+    <mask id="SvgjsMask10557">
+      <rect width="1440" height="1393" fill="#ffffff" class="triangle-float1"></rect>
+    </mask>
+    <pattern
+      x="0"
+      y="0"
+      width="12.96"
+      height="12.96"
+      patternUnits="userSpaceOnUse"
+      id="SvgjsPattern10559"
+    >
+      <path
+        d="M0 12.96L6.48 0L12.96 12.96"
+        stroke="rgba(255, 203, 101, 0.82)"
+        fill="none"
+      class="triangle-float1"></path>
+    </pattern>
+    <clipPath id="SvgjsClipPath10558">
+      <circle r="123.12" cx="962.68" cy="244.96" class="triangle-float1"></circle>
+    </clipPath>
+  </defs>
+    <g mask='url("#SvgjsMask10259")' fill="none">
+    <path
+      d="M1402.6599999999999 1288.35 L1233.6399999999999 1055.73L1475.8799250481225 1014.3100749518774z"
+      fill="rgba(222, 99, 128, 0.82)"
+    class="triangle-float1"></path>
+    <circle
+      r="118.58333333333333"
+      cx="596.53"
+      cy="1115.73"
+      fill="rgba(255, 203, 101, 0.82)"
+    class="triangle-float1"></circle>
+    <path
+      d="M942.54 11.62a5.6 5.6 0 1 0-11.12-1.27 5.6 5.6 0 1 0 11.12 1.27zM926.65 9.81a5.6 5.6 0 1 0-11.13-1.26 5.6 5.6 0 1 0 11.13 1.26zM910.75 8a5.6 5.6 0 1 0-11.13-1.26 5.6 5.6 0 1 0 11.13 1.26zM894.85 6.2a5.6 5.6 0 1 0-11.13-1.26 5.6 5.6 0 1 0 11.13 1.26zM976.15-0.67a5.6 5.6 0 1 0-11.13-1.26 5.6 5.6 0 1 0 11.13 1.26zM960.25-2.48a5.6 5.6 0 1 0-11.13-1.26 5.6 5.6 0 1 0 11.13 1.26zM944.35-4.28a5.6 5.6 0 1 0-11.13-1.27 5.6 5.6 0 1 0 11.13 1.27zM928.45-6.09a5.6 5.6 0 1 0-11.13-1.26 5.6 5.6 0 1 0 11.13 1.26zM1009.75-12.96a5.6 5.6 0 1 0-11.13-1.26 5.6 5.6 0 1 0 11.13 1.26zM993.85-14.76a5.6 5.6 0 1 0-11.13-1.27 5.6 5.6 0 1 0 11.13 1.27zM977.95-16.57a5.6 5.6 0 1 0-11.13-1.26 5.6 5.6 0 1 0 11.13 1.26zM962.05-18.37a5.6 5.6 0 1 0-11.12-1.27 5.6 5.6 0 1 0 11.12 1.27z"
+      stroke="rgba(222, 99, 128, 0.82)"
+      stroke-width="1"
+      stroke-dasharray="3, 3"
+    class="triangle-float1"></path>
+    <rect
+      width="325.92"
+      height="325.92"
+      clip-path='url("#SvgjsClipPath10260")'
+      x="89.29"
+      y="159.63"
+      fill="url(#SvgjsPattern10261)"
+      transform="rotate(107.33, 252.25, 322.59)"
+    class="triangle-float1"></rect>
+    <rect
+      width="607.04"
+      height="607.04"
+      clip-path='url("#SvgjsClipPath10262")'
+      x="-231.48"
+      y="708.5"
+      fill="url(#SvgjsPattern10263)"
+      transform="rotate(32.03, 72.04, 1012.02)"
+    class="triangle-float1"></rect>
+  </g>
+  <defs>
+    <mask id="SvgjsMask10259">
+      <rect width="1440" height="1423" fill="#ffffff" class="triangle-float1"></rect>
+    </mask>
+    <pattern
+      x="0"
+      y="0"
+      width="325.92"
+      height="11.64"
+      patternUnits="userSpaceOnUse"
+      id="SvgjsPattern10261"
+    >
+      <rect
+        width="325.92"
+        height="5.82"
+        x="0"
+        y="0"
+        fill="rgba(255, 203, 101, 0.82)"
+      class="triangle-float1"></rect>
+      <rect
+        width="325.92"
+        height="5.82"
+        x="0"
+        y="5.82"
+        fill="rgba(0, 0, 0, 0)"
+      class="triangle-float1"></rect>
+    </pattern>
+    <clipPath id="SvgjsClipPath10260">
+      <circle r="81.48" cx="252.25" cy="322.59" class="triangle-float1"></circle>
+    </clipPath>
+    <pattern
+      x="0"
+      y="0"
+      width="607.04"
+      height="10.84"
+      patternUnits="userSpaceOnUse"
+      id="SvgjsPattern10263"
+    >
+      <rect
+        width="607.04"
+        height="5.42"
+        x="0"
+        y="0"
+        fill="rgba(129, 148, 212, 0.76)"
+      class="triangle-float1"></rect>
+      <rect
+        width="607.04"
+        height="5.42"
+        x="0"
+        y="5.42"
+        fill="rgba(0, 0, 0, 0)"
+      class="triangle-float1"></rect>
+    </pattern>
+    <clipPath id="SvgjsClipPath10262">
+      <circle r="151.76" cx="72.04" cy="1012.02" class="triangle-float1"></circle>
+    </clipPath>
+  </defs>
+  <g mask='url("#SvgjsMask10454")' fill="none">
+    <rect
+      width="192"
+      height="192"
+      clip-path='url("#SvgjsClipPath10455")'
+      x="265.26"
+      y="424.73"
+      fill="url(#SvgjsPattern10456)"
+      transform="rotate(153.06, 361.26, 520.73)"
+    class="triangle-float1"></rect>
+    <path
+      d="M451.28000000000003 1765.0100000000002 L143.8 1560.97L84.55727931845675 1875.9727206815435z"
+      stroke="rgba(255, 203, 101, 0.82)"
+      stroke-width="2.03"
+      stroke-dasharray="4, 4"
+    class="triangle-float1"></path>
+    <rect
+      width="271.2"
+      height="271.2"
+      clip-path='url("#SvgjsClipPath10457")'
+      x="-83.09"
+      y="9.94"
+      fill="url(#SvgjsPattern10458)"
+      transform="rotate(59.24, 52.51, 145.54)"
+    class="triangle-float1"></rect>
+    <rect
+      width="96.6"
+      height="96.6"
+      clip-path='url("#SvgjsClipPath10459")'
+      x="1293.27"
+      y="95.82"
+      fill="url(#SvgjsPattern10460)"
+      transform="rotate(349.73, 1341.57, 144.12)"
+    class="triangle-float1"></rect>
+    <circle
+      r="160.64593901623806"
+      cx="1301.54"
+      cy="383.65"
+      fill="rgba(222, 99, 128, 0.82)"
+    class="triangle-float1" ></circle>
+  </g>
+  <defs>
+    <mask id="SvgjsMask10454">
+      <rect width="1440" height="1393" fill="#ffffff" class="triangle-float1"></rect>
+    </mask>
+    <pattern
+      x="0"
+      y="0"
+      width="6"
+      height="6"
+      patternUnits="userSpaceOnUse"
+      id="SvgjsPattern10456"
+    >
+      <path
+        d="M3 1L3 5M1 3L5 3"
+        stroke="rgba(136, 184, 106, 0.85)"
+        fill="none"
+        stroke-width="1.85"
+      class="triangle-float1"></path>
+    </pattern>
+    <clipPath id="SvgjsClipPath10455">
+      <circle r="48" cx="361.26" cy="520.73" class="triangle-float1"></circle>
+    </clipPath>
+    <pattern
+      x="0"
+      y="0"
+      width="9.04"
+      height="9.04"
+      patternUnits="userSpaceOnUse"
+      id="SvgjsPattern10458"
+    >
+      <path
+        d="M0 9.04L4.52 0L9.04 9.04"
+        stroke="rgba(255, 203, 101, 0.82)"
+        fill="none"
+      class="triangle-float1"></path>
+    </pattern>
+    <clipPath id="SvgjsClipPath10457">
+      <circle r="67.8" cx="52.51" cy="145.54" class="triangle-float1"></circle>
+    </clipPath>
+    <pattern
+      x="0"
+      y="0"
+      width="9.66"
+      height="9.66"
+      patternUnits="userSpaceOnUse"
+      id="SvgjsPattern10460"
+    >
+      <path
+        d="M4.83 1L4.83 8.66M1 4.83L8.66 4.83"
+        stroke="rgba(136, 184, 106, 0.85)"
+        fill="none"
+        stroke-width="1.7"
+      class="triangle-float1"></path>
+    </pattern>
+    <clipPath id="SvgjsClipPath10459">
+      <circle r="24.15" cx="1341.57" cy="144.12" class="triangle-float1"></circle>
+    </clipPath>
+
+    <style>
+            @keyframes float1 {
+                0%{transform: translate(0, 0)}
+                50%{transform: translate(-10px, 0)}
+                100%{transform: translate(0, 0)}
+            }
+
+            .triangle-float1 {
+                animation: float1 5s infinite;
+            }
+
+            @keyframes float2 {
+                0%{transform: translate(0, 0)}
+                50%{transform: translate(-5px, -5px)}
+                100%{transform: translate(0, 0)}
+            }
+
+            .triangle-float2 {
+                animation: float2 4s infinite;
+            }
+
+            @keyframes float3 {
+                0%{transform: translate(0, 0)}
+                50%{transform: translate(0, -10px)}
+                100%{transform: translate(0, 0)}
+            }
+
+            .triangle-float3 {
+                animation: float3 6s infinite;
+            }
+        </style>
+  </defs>
+</svg>

@@ -1,0 +1,435 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <style>
+    header nav {
+        width: 100%;
+    }
+
+    @media screen and (max-width: 1000px) {
+        body {
+            display: block;
+        }
+
+        header {
+            width: 100%;
+        }
+
+        header>div {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            border-bottom: solid;
+        }
+
+        .burger-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+        }
+
+        #small .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        #small .logo .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 48px;
+            height: 48px;
+        }
+
+        #small .logo .icon img {
+
+            width: 30px;
+            height: 30px;
+        }
+
+        #small {
+            padding: 0.5em 1em;
+            display: flex;
+            align-items: center;
+        }
+
+        #big {
+            display: none;
+        }
+
+        ul {
+            padding: 0;
+            height: 100vh;
+        }
+
+        #menu {
+            position: fixed;
+            top: 0;
+            z-index: 7;
+            width: 300px;
+            list-style-type: none;
+            -webkit-font-smoothing: antialiased;
+            /* to stop flickering of text in safari */
+            transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        }
+
+        .lien-burger {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            padding: 0.5em 1em;
+        }
+
+        .lien-burger .icon{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .burger-menu{
+            display: none;
+            height: 100vh;
+            position: absolute;
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #small > div:first-child{
+            display: flex;
+            gap: 1em;
+        }
+
+    }
+
+    #blocage{
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.221);
+        z-index: 2;
+    }
+    @media screen and (min-width: 1001px) {
+        header {
+            width: 100%;
+            height: 100vh;
+            grid-area: Header;
+            border-right: solid;
+
+        }
+
+        header>div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            height: 100vh;
+        }
+
+        #small {
+            display: none;
+        }
+
+        .liens-header {
+            width: 100%;
+
+        }
+
+        .liens-header figure {
+            height: attr(width px);
+            padding: 0.5vw 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .burger-menu{
+            display: none;
+        }
+    }
+
+    .liens-header figure:hover .icon-nav{
+    stroke-width: 2.25;
+}
+
+.liens-header figure:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+    border-top: solid;
+    border-bottom: solid;
+}
+
+.liens-header figure .icon-nav{
+    stroke:#3f2400;
+}
+</style>          
+{% endblock %}
+
+{% block javascripts %}
+<script defer>
+    $(document).ready(init);
+
+    function init(){
+        $('.burger-button').on('click', function(){
+            $('.burger-menu').show();
+            $('#blocage').show()
+        })
+
+        $('#close-button').on('click', function(){
+            $('.burger-menu').hide();
+            $('#blocage').hide()
+        })
+
+        window.onclick = function(event) {
+            if (event.target == $('#blocage')) {
+                $('.blocage').hide()
+            }
+        }
+
+        $('.burger-menu').hide();
+    }
+</script>
+{% endblock %}
+
+{% block body %}
+<header class="bg-yellow-light thin border-black">
+    <div id="big">
+        <a href={{path('app_menu')}} class="liens-header">
+            <figure class="border-beige-light">
+                <img src={{asset('images/icons/Home.svg')}} alt="">
+                <figcaption class="bt cinq regular beige dark">Accueil</figcaption>
+            </figure>
+        </a>
+
+        <nav>
+            <a href={{path('app_menu')}} class="liens-header">
+                <figure class="border-beige-light">
+                    <div class="icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="icon-nav"
+                                d="M15.25 34V32.75C15.25 31.6009 15.4763 30.4631 15.9161 29.4015C16.3558 28.3399 17.0003 27.3753 17.8128 26.5628C18.6253 25.7503 19.5899 25.1058 20.6515 24.6661C21.7131 24.2263 22.8509 24 24 24C25.1491 24 26.2869 24.2263 27.3485 24.6661C28.4101 25.1058 29.3747 25.7503 30.1872 26.5628C30.9997 27.3753 31.6442 28.3399 32.0839 29.4015C32.5237 30.4631 32.75 31.6009 32.75 32.75V34"
+                                stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path class="icon-nav"
+                                d="M24 24C25.3261 24 26.5979 23.4732 27.5355 22.5355C28.4732 21.5979 29 20.3261 29 19C29 17.6739 28.4732 16.4021 27.5355 15.4645C26.5979 14.5268 25.3261 14 24 14C22.6739 14 21.4021 14.5268 20.4645 15.4645C19.5268 16.4021 19 17.6739 19 19C19 20.3261 19.5268 21.5979 20.4645 22.5355C21.4021 23.4732 22.6739 24 24 24V24Z"
+                                stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <figcaption class="bt cinq regular beige dark">Profil</figcaption>
+                </figure>
+            </a><a href={{path('app_sondage')}} class="liens-header">
+                <figure class="border-beige-light">
+                    <div class="icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="icon-nav"
+                                d="M24.5953 25.899L21.2959 26.371L21.767 23.0707L30.2519 14.5858C30.627 14.2107 31.1357 14 31.6661 14C32.1965 14 32.7052 14.2107 33.0803 14.5858C33.4553 14.9608 33.666 15.4695 33.666 15.9999C33.666 16.5303 33.4553 17.039 33.0803 17.4141L24.5953 25.899Z"
+                                stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path class="icon-nav"
+                                d="M30.3333 26.0004V32.6667C30.3333 33.0203 30.1928 33.3595 29.9428 33.6095C29.6927 33.8595 29.3536 34 29 34H15.6673C15.3137 34 14.9745 33.8595 14.7245 33.6095C14.4745 33.3595 14.334 33.0203 14.334 32.6667V19.334C14.334 18.9804 14.4745 18.6413 14.7245 18.3912C14.9745 18.1412 15.3137 18.0007 15.6673 18.0007H22.3336"
+                                stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <figcaption class="bt cinq regular beige dark">Sondage</figcaption>
+                </figure>
+            </a><a href={{path('app_resultat')}} class="liens-header">
+                <figure class="border-beige-light">
+                    <div class="icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="icon-nav" d="M13.5352 34H34.4654" stroke="black" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path class="icon-nav"
+                                d="M17.794 23.7676H15.0033C14.8183 23.7676 14.6408 23.8411 14.51 23.9719C14.3792 24.1028 14.3057 24.2802 14.3057 24.4653V34.0001H18.4917V24.4653C18.4917 24.2802 18.4182 24.1028 18.2874 23.9719C18.1565 23.8411 17.9791 23.7676 17.794 23.7676Z"
+                                stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path class="icon-nav"
+                                d="M25.3956 14H22.6049C22.4199 14 22.2424 14.0735 22.1116 14.2043C21.9807 14.3352 21.9072 14.5126 21.9072 14.6977V34H26.0933V14.6977C26.0933 14.5126 26.0198 14.3352 25.8889 14.2043C25.7581 14.0735 25.5806 14 25.3956 14Z"
+                                stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path class="icon-nav"
+                                d="M32.9972 18.186H30.2065C30.0214 18.186 29.844 18.2595 29.7131 18.3904C29.5823 18.5212 29.5088 18.6987 29.5088 18.8837V34H33.6948V18.8837C33.6948 18.6987 33.6213 18.5212 33.4905 18.3904C33.3597 18.2595 33.1822 18.186 32.9972 18.186Z"
+                                stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <figcaption class="bt cinq regular noir beige dark">Résultat</figcaption>
+                </figure>
+            </a><a href={{path('app_menu')}} class="liens-header">
+                <figure class="border-beige-light">
+                    <div class="icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="icon-nav"
+                                d="M17.3333 29.3333H16.6667C15.9594 29.3333 15.2811 29.0523 14.781 28.5522C14.281 28.0521 14 27.3738 14 26.6666V23.9999C14 23.2927 14.281 22.6144 14.781 22.1143C15.2811 21.6142 15.9594 21.3333 16.6667 21.3333H17.3333C17.5101 21.3333 17.6797 21.4035 17.8047 21.5285C17.9298 21.6535 18 21.8231 18 21.9999V28.6666C18 28.8434 17.9298 29.013 17.8047 29.138C17.6797 29.263 17.5101 29.3333 17.3333 29.3333Z"
+                                stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path class="icon-nav"
+                                d="M31.3333 29.3333H30.6667C30.4899 29.3333 30.3203 29.263 30.1953 29.138C30.0702 29.013 30 28.8434 30 28.6666V21.9999C30 21.8231 30.0702 21.6535 30.1953 21.5285C30.3203 21.4035 30.4899 21.3333 30.6667 21.3333H31.3333C32.0406 21.3333 32.7189 21.6142 33.219 22.1143C33.719 22.6144 34 23.2927 34 23.9999V26.6666C34 27.3738 33.719 28.0521 33.219 28.5522C32.7189 29.0523 32.0406 29.3333 31.3333 29.3333Z"
+                                stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path class="icon-nav"
+                                d="M16.667 21.3333C16.667 19.3884 17.4396 17.5232 18.8149 16.1479C20.1901 14.7726 22.0554 14 24.0003 14V14C25.9452 14 27.8105 14.7726 29.1858 16.1479C30.561 17.5232 31.3337 19.3884 31.3337 21.3333"
+                                stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path class="icon-nav"
+                                d="M26.667 32.6668H28.667C29.3742 32.6668 30.0525 32.3859 30.5526 31.8858C31.0527 31.3857 31.3337 30.7074 31.3337 30.0002V29.3335"
+                                stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path class="icon-nav"
+                                d="M25.3337 34.0002H24.0003C23.6467 34.0002 23.3076 33.8597 23.0575 33.6096C22.8075 33.3596 22.667 33.0205 22.667 32.6668C22.667 32.3132 22.8075 31.9741 23.0575 31.724C23.3076 31.474 23.6467 31.3335 24.0003 31.3335H25.3337C25.6873 31.3335 26.0264 31.474 26.2765 31.724C26.5265 31.9741 26.667 32.3132 26.667 32.6668C26.667 33.0205 26.5265 33.3596 26.2765 33.6096C26.0264 33.8597 25.6873 34.0002 25.3337 34.0002Z"
+                                stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <figcaption class="bt cinq regular beige dark">Contact</figcaption>
+                </figure>
+            </a>
+        </nav>
+
+        <a href={{path('app_logout')}} class="liens-header" id="leave">
+            <figure class="border-beige-light">
+                <div class="icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="icon-nav"
+                            d="M19 15.3379C16.011 17.0669 14 20.2987 14 24.0001C14 29.5229 18.4772 34.0001 24 34.0001C29.5228 34.0001 34 29.5229 34 24.0001C34 20.2987 31.989 17.0669 29 15.3379"
+                            stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path class="icon-nav" d="M24 20.6396V13.6396" stroke="black" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <figcaption class="bt cinq regular">Quitter</figcaption>
+            </figure>
+        </a>
+    </div>
+
+    <div id="small">
+        <div>
+            <div class="burger-button first">
+                <svg width="24" height="24" viewBox="0 0 55 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_252_1521)">
+                        <rect width="55" height="12" fill="black" />
+                        <rect width="55" height="12" transform="translate(0 18)" fill="black" />
+                        <rect width="55" height="12" transform="translate(0 36)" fill="black" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_252_1521">
+                            <rect width="55" height="48" fill="white" />
+                        </clipPath>
+                    </defs>
+                </svg>
+            </div>
+    
+            <a href="">
+                <div class="logo">
+                    <div class="icon">
+                        <img src={{asset('images/icons/Home.svg')}} alt="">
+                    </div>
+    
+                    <div class="text">
+                        <p class="hl cinq semibold dark beige">Grand Guéret</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+</header>
+
+
+<div class="burger-menu ">
+    <ul id="menu" class=" bt deux medium bg-yellow-light">
+        <div class="lien-burger"  id="close-button">
+            <svg width="24" height="24" viewBox="0 0 55 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_252_1521)">
+                    <rect width="55" height="12" fill="black" />
+                    <rect width="55" height="12" transform="translate(0 18)" fill="black" />
+                    <rect width="55" height="12" transform="translate(0 36)" fill="black" />
+                </g>
+                <defs>
+                    <clipPath id="clip0_252_1521">
+                        <rect width="55" height="48" fill="white" />
+                    </clipPath>
+                </defs>
+            </svg>
+        </div>
+        <a href="#">
+            <div class="lien-burger">
+                <img src={{asset('images/icons/Home.svg')}} alt="">
+                <li>Home</li>
+            </div>
+
+        </a>
+        <a href="#">
+            <div class="lien-burger">
+                <div class="icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path class="icon-nav"
+                            d="M24.5953 25.899L21.2959 26.371L21.767 23.0707L30.2519 14.5858C30.627 14.2107 31.1357 14 31.6661 14C32.1965 14 32.7052 14.2107 33.0803 14.5858C33.4553 14.9608 33.666 15.4695 33.666 15.9999C33.666 16.5303 33.4553 17.039 33.0803 17.4141L24.5953 25.899Z"
+                            stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path class="icon-nav"
+                            d="M30.3333 26.0004V32.6667C30.3333 33.0203 30.1928 33.3595 29.9428 33.6095C29.6927 33.8595 29.3536 34 29 34H15.6673C15.3137 34 14.9745 33.8595 14.7245 33.6095C14.4745 33.3595 14.334 33.0203 14.334 32.6667V19.334C14.334 18.9804 14.4745 18.6413 14.7245 18.3912C14.9745 18.1412 15.3137 18.0007 15.6673 18.0007H22.3336"
+                            stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <li>Sondage</li>
+            </div>
+        </a>
+        <a href="#">
+            <div class="lien-burger">
+                <div class="icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path class="icon-nav" d="M13.5352 34H34.4654" stroke="black" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path class="icon-nav"
+                            d="M17.794 23.7676H15.0033C14.8183 23.7676 14.6408 23.8411 14.51 23.9719C14.3792 24.1028 14.3057 24.2802 14.3057 24.4653V34.0001H18.4917V24.4653C18.4917 24.2802 18.4182 24.1028 18.2874 23.9719C18.1565 23.8411 17.9791 23.7676 17.794 23.7676Z"
+                            stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path class="icon-nav"
+                            d="M25.3956 14H22.6049C22.4199 14 22.2424 14.0735 22.1116 14.2043C21.9807 14.3352 21.9072 14.5126 21.9072 14.6977V34H26.0933V14.6977C26.0933 14.5126 26.0198 14.3352 25.8889 14.2043C25.7581 14.0735 25.5806 14 25.3956 14Z"
+                            stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path class="icon-nav"
+                            d="M32.9972 18.186H30.2065C30.0214 18.186 29.844 18.2595 29.7131 18.3904C29.5823 18.5212 29.5088 18.6987 29.5088 18.8837V34H33.6948V18.8837C33.6948 18.6987 33.6213 18.5212 33.4905 18.3904C33.3597 18.2595 33.1822 18.186 32.9972 18.186Z"
+                            stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <li>Résultat</li>
+            </div>
+        </a>
+        <a href="#">
+            <div class="lien-burger">
+                <div class="icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path class="icon-nav"
+                            d="M17.3333 29.3333H16.6667C15.9594 29.3333 15.2811 29.0523 14.781 28.5522C14.281 28.0521 14 27.3738 14 26.6666V23.9999C14 23.2927 14.281 22.6144 14.781 22.1143C15.2811 21.6142 15.9594 21.3333 16.6667 21.3333H17.3333C17.5101 21.3333 17.6797 21.4035 17.8047 21.5285C17.9298 21.6535 18 21.8231 18 21.9999V28.6666C18 28.8434 17.9298 29.013 17.8047 29.138C17.6797 29.263 17.5101 29.3333 17.3333 29.3333Z"
+                            stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path class="icon-nav"
+                            d="M31.3333 29.3333H30.6667C30.4899 29.3333 30.3203 29.263 30.1953 29.138C30.0702 29.013 30 28.8434 30 28.6666V21.9999C30 21.8231 30.0702 21.6535 30.1953 21.5285C30.3203 21.4035 30.4899 21.3333 30.6667 21.3333H31.3333C32.0406 21.3333 32.7189 21.6142 33.219 22.1143C33.719 22.6144 34 23.2927 34 23.9999V26.6666C34 27.3738 33.719 28.0521 33.219 28.5522C32.7189 29.0523 32.0406 29.3333 31.3333 29.3333Z"
+                            stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path class="icon-nav"
+                            d="M16.667 21.3333C16.667 19.3884 17.4396 17.5232 18.8149 16.1479C20.1901 14.7726 22.0554 14 24.0003 14V14C25.9452 14 27.8105 14.7726 29.1858 16.1479C30.561 17.5232 31.3337 19.3884 31.3337 21.3333"
+                            stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path class="icon-nav"
+                            d="M26.667 32.6668H28.667C29.3742 32.6668 30.0525 32.3859 30.5526 31.8858C31.0527 31.3857 31.3337 30.7074 31.3337 30.0002V29.3335"
+                            stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path class="icon-nav"
+                            d="M25.3337 34.0002H24.0003C23.6467 34.0002 23.3076 33.8597 23.0575 33.6096C22.8075 33.3596 22.667 33.0205 22.667 32.6668C22.667 32.3132 22.8075 31.9741 23.0575 31.724C23.3076 31.474 23.6467 31.3335 24.0003 31.3335H25.3337C25.6873 31.3335 26.0264 31.474 26.2765 31.724C26.5265 31.9741 26.667 32.3132 26.667 32.6668C26.667 33.0205 26.5265 33.3596 26.2765 33.6096C26.0264 33.8597 25.6873 34.0002 25.3337 34.0002Z"
+                            stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <li>Contact</li>
+            </div>
+        </a>
+        <a href="#">
+            <div class="lien-burger">
+                <div class="icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path class="icon-nav"
+                            d="M19 15.3379C16.011 17.0669 14 20.2987 14 24.0001C14 29.5229 18.4772 34.0001 24 34.0001C29.5228 34.0001 34 29.5229 34 24.0001C34 20.2987 31.989 17.0669 29 15.3379"
+                            stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path class="icon-nav" d="M24 20.6396V13.6396" stroke="black" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <li>Quitter</li>
+            </div>
+        </a>
+    </ul>
+</div>
+</div>
+
+<div id="blocage"></div>
+{% endblock %}

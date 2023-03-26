@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Grand Guéret{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href={{asset('css/accueil.css')}}>        
+{% endblock %}
+
+{% block body %}
+<header>
+    <nav>
+        <div class="logo-header">
+            <img src="" alt="">
+            <a href="" class="logo-text hl cinq semibold beige dark">Grand Guéret</a>
+        </div>
+
+        <div class="liens-header">
+            <a href={{path('app_accueil')}} class="lien bt quatre semibold beige medium">Sondage</a>
+            <a href={{path('app_accueil')}} class="lien bt quatre semibold beige medium">Résultat</a>
+            <a href={{path('app_accueil')}} class="lien bt quatre semibold beige medium">Contact</a>
+
+            <div class="buttons">
+                <a href={{path('app_register')}} class="lien bt quatre semibold">
+                    <button class="small-light-button bt quatre semibold border-beige-medium beige medium">
+                        Inscription
+                    </button>
+                </a>
+    
+                <a href={{path('app_login')}}  class="lien">
+                    <button class="small-light-button bt quatre semibold border-beige-dark beige dark">
+                        Connexion
+                    </button>
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="ss-bloc-text">
+            <div class="titles">
+                <h1 class="hl un black green medium">Découvrez tout sur votre santé !</h1>
+                <p class="sd deux regular beige dark">
+                    Prenez le contrôle en remplissant notre sondage alimentaire.
+                </p>
+            </div>   
+        
+            <div class="buttons">
+                <a href={{path('app_accueil')}}  class="lien bt quatre semibold">
+                    <button class="small-light-button bt quatre semibold border-yellow-dark yellow dark">
+                        Répondre au sondage 
+                    </button>
+                </a>
+                <a href={{path('app_accueil')}} class="lien bt quatre semibold">
+                    <button class="small-light-button bt quatre semibold border-pink-medium pink medium">
+                        Accéder aux données santés
+                    </button>
+                </a>
+            </div>
+        </div>
+</div>
+
+<footer class="">
+    <nav>
+        <div class="copyright">
+            <a href="" class="bt six semibold beige dark">Copyright © 2023 Grand Guéret</a>
+        </div>
+
+        <div class="liens-footer">
+            <a href="" class="lien bt six semibold beige dark">Tous Droits Réservés</a>
+            <a href="" class="lien bt six regular beige dark">Confidentialité</a>
+            <a href="" class="lien bt six regular beige dark">Termes et Conditions</a>
+        </div>
+    </nav>
+</footer>
+{% endblock %}
